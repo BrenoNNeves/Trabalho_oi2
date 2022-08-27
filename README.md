@@ -15,6 +15,6 @@ Repositorio referente a materia de oi2
 
 ## Integrantes:
 
-Breno Neves
+Alécio Leandro Medeiros, Breno Neves, Leonardo Moreira Domingues
 
 
