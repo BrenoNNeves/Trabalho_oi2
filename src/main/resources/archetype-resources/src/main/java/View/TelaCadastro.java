@@ -25,21 +25,158 @@ public class TelaCadastro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jTextFieldPeriodo = new javax.swing.JTextField();
+        jTextFieldNome = new javax.swing.JTextField();
+        jTextFieldCurso = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jTextFieldPeriodoRA = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextAreaDadosEventos = new javax.swing.JTextArea();
+        jLabel6 = new javax.swing.JLabel();
+        jButtonEditarNome = new javax.swing.JButton();
+        jButtonSalvarNome = new javax.swing.JButton();
+        jButtonDeletarNome = new javax.swing.JButton();
+        jButtonVoltarNome = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextAreaDadosEventos1 = new javax.swing.JTextArea();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1000, 900));
+        getContentPane().setLayout(null);
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setText("DADOS CADASTRADOS:");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(20, 340, 250, 25);
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel2.setText("CADASTRO DE INFORMAÇÕES PESSOAIS");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(340, 10, 250, 16);
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel3.setText("CURSO:");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(20, 120, 80, 25);
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel4.setText("NOME:");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(20, 70, 80, 25);
+        getContentPane().add(jTextFieldPeriodo);
+        jTextFieldPeriodo.setBounds(120, 170, 740, 30);
+        getContentPane().add(jTextFieldNome);
+        jTextFieldNome.setBounds(120, 70, 740, 30);
+        getContentPane().add(jTextFieldCurso);
+        jTextFieldCurso.setBounds(120, 120, 740, 30);
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel5.setText("PERÍODO:");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(20, 170, 90, 25);
+
+        jTextFieldPeriodoRA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldPeriodoRAActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldPeriodoRA);
+        jTextFieldPeriodoRA.setBounds(120, 220, 740, 30);
+
+        jTextAreaDadosEventos.setColumns(20);
+        jTextAreaDadosEventos.setRows(5);
+        jScrollPane1.setViewportView(jTextAreaDadosEventos);
+
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(110, 610, 740, 180);
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel6.setText("RA:");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(20, 220, 90, 25);
+
+        jButtonEditarNome.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButtonEditarNome.setText("EDITAR");
+        jButtonEditarNome.setToolTipText("");
+        jButtonEditarNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEditarNomeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonEditarNome);
+        jButtonEditarNome.setBounds(640, 280, 100, 40);
+
+        jButtonSalvarNome.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButtonSalvarNome.setText("SALVAR");
+        jButtonSalvarNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSalvarNomeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonSalvarNome);
+        jButtonSalvarNome.setBounds(762, 280, 100, 40);
+
+        jButtonDeletarNome.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButtonDeletarNome.setText("EXCLUIR");
+        jButtonDeletarNome.setToolTipText("");
+        jButtonDeletarNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDeletarNomeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonDeletarNome);
+        jButtonDeletarNome.setBounds(520, 280, 100, 40);
+
+        jButtonVoltarNome.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButtonVoltarNome.setText("VOLTAR");
+        jButtonVoltarNome.setToolTipText("");
+        jButtonVoltarNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVoltarNomeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonVoltarNome);
+        jButtonVoltarNome.setBounds(750, 810, 100, 40);
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel7.setText("PRÓXIMOS EVENTOS:");
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(20, 570, 250, 25);
+
+        jTextAreaDadosEventos1.setColumns(20);
+        jTextAreaDadosEventos1.setRows(5);
+        jScrollPane2.setViewportView(jTextAreaDadosEventos1);
+
+        getContentPane().add(jScrollPane2);
+        jScrollPane2.setBounds(110, 380, 740, 170);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextFieldPeriodoRAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPeriodoRAActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldPeriodoRAActionPerformed
+
+    private void jButtonEditarNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditarNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonEditarNomeActionPerformed
+
+    private void jButtonSalvarNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonSalvarNomeActionPerformed
+
+    private void jButtonDeletarNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDeletarNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonDeletarNomeActionPerformed
+
+    private void jButtonVoltarNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoltarNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonVoltarNomeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -77,5 +214,24 @@ public class TelaCadastro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonDeletarNome;
+    private javax.swing.JButton jButtonEditarNome;
+    private javax.swing.JButton jButtonSalvarNome;
+    private javax.swing.JButton jButtonVoltarNome;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea jTextAreaDadosEventos;
+    private javax.swing.JTextArea jTextAreaDadosEventos1;
+    private javax.swing.JTextField jTextFieldCurso;
+    private javax.swing.JTextField jTextFieldNome;
+    private javax.swing.JTextField jTextFieldPeriodo;
+    private javax.swing.JTextField jTextFieldPeriodoRA;
     // End of variables declaration//GEN-END:variables
 }
