@@ -122,7 +122,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         jButtonSalvarNome.setBounds(762, 280, 100, 40);
 
         jButtonDeletarNome.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButtonDeletarNome.setText("EXCLUIR");
+        jButtonDeletarNome.setText("DELETAR");
         jButtonDeletarNome.setToolTipText("");
         jButtonDeletarNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
