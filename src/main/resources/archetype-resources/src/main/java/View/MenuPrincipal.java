@@ -39,7 +39,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jToggleButtonCadastroAtividades.setBounds(370, 270, 260, 40);
 
         jToggleButtonCadastroDados.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jToggleButtonCadastroDados.setText("LISTAGEM DADOS");
+        jToggleButtonCadastroDados.setText("LISTAGEM ATIVIDADES");
+        jToggleButtonCadastroDados.setActionCommand("LISTAGEM ATIVIDADES");
         getContentPane().add(jToggleButtonCadastroDados);
         jToggleButtonCadastroDados.setBounds(370, 360, 260, 40);
 
