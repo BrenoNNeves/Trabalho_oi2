@@ -86,7 +86,7 @@ public class CadastroLista extends javax.swing.JFrame {
         jScrollPane1.setBounds(140, 380, 709, 400);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel4.setText("PROVA:");
+        jLabel4.setText("AVALIAÇÃO:");
         getContentPane().add(jLabel4);
         jLabel4.setBounds(20, 180, 109, 47);
 
