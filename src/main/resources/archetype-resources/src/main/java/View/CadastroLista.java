@@ -27,8 +27,11 @@ public class CadastroLista extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         TextFieldProva = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
+        ButtonEditar = new javax.swing.JButton();
+        ButtonDeletar = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        ButtonSalvar2 = new javax.swing.JButton();
         ButtonVoltar = new javax.swing.JButton();
-        ButtonSalvar1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximizedBounds(new java.awt.Rectangle(1000, 1000, 1000, 10000));
@@ -41,15 +44,15 @@ public class CadastroLista extends javax.swing.JFrame {
         getContentPane().add(jLabel1);
         jLabel1.setBounds(20, 330, 370, 47);
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel2.setText("DISCPLINA:");
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel2.setText("CADASTRO DE DISCIPLINAS/PROVAS PARA LISTAGEM");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(20, 30, 109, 47);
+        jLabel2.setBounds(300, 0, 310, 47);
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel3.setText("ATIVIDADE:");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(20, 90, 109, 47);
+        jLabel3.setBounds(20, 130, 109, 47);
 
         TextFieldDate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -57,7 +60,7 @@ public class CadastroLista extends javax.swing.JFrame {
             }
         });
         getContentPane().add(TextFieldDate);
-        TextFieldDate.setBounds(140, 220, 709, 33);
+        TextFieldDate.setBounds(140, 240, 709, 33);
 
         TextFieldDisciplina.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,7 +68,7 @@ public class CadastroLista extends javax.swing.JFrame {
             }
         });
         getContentPane().add(TextFieldDisciplina);
-        TextFieldDisciplina.setBounds(140, 40, 709, 33);
+        TextFieldDisciplina.setBounds(140, 90, 709, 33);
 
         TextFieldAtividade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,19 +76,19 @@ public class CadastroLista extends javax.swing.JFrame {
             }
         });
         getContentPane().add(TextFieldAtividade);
-        TextFieldAtividade.setBounds(140, 100, 709, 33);
+        TextFieldAtividade.setBounds(140, 140, 709, 33);
 
         TextAreaItensCadastrados.setColumns(20);
         TextAreaItensCadastrados.setRows(5);
         jScrollPane1.setViewportView(TextAreaItensCadastrados);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(140, 380, 709, 450);
+        jScrollPane1.setBounds(140, 380, 709, 400);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel4.setText("PROVA:");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(20, 150, 109, 47);
+        jLabel4.setBounds(20, 180, 109, 47);
 
         TextFieldProva.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,34 +96,59 @@ public class CadastroLista extends javax.swing.JFrame {
             }
         });
         getContentPane().add(TextFieldProva);
-        TextFieldProva.setBounds(140, 160, 709, 33);
+        TextFieldProva.setBounds(140, 190, 709, 33);
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setText("DATA:");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(20, 210, 109, 47);
+        jLabel5.setBounds(20, 230, 109, 47);
+
+        ButtonEditar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        ButtonEditar.setText("EDITAR");
+        ButtonEditar.setActionCommand("VOLTAR");
+        ButtonEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonEditarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(ButtonEditar);
+        ButtonEditar.setBounds(600, 290, 110, 40);
+        ButtonEditar.getAccessibleContext().setAccessibleName("");
+
+        ButtonDeletar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        ButtonDeletar.setText("DELETAR");
+        ButtonDeletar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonDeletarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(ButtonDeletar);
+        ButtonDeletar.setBounds(460, 290, 110, 40);
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel6.setText("DISCIPLINA:");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(20, 80, 109, 47);
+
+        ButtonSalvar2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        ButtonSalvar2.setLabel("SALVAR");
+        ButtonSalvar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonSalvar2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(ButtonSalvar2);
+        ButtonSalvar2.setBounds(740, 290, 110, 40);
 
         ButtonVoltar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         ButtonVoltar.setText("VOLTAR");
-        ButtonVoltar.setActionCommand("VOLTAR");
         ButtonVoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonVoltarActionPerformed(evt);
             }
         });
         getContentPane().add(ButtonVoltar);
-        ButtonVoltar.setBounds(600, 280, 110, 40);
-        ButtonVoltar.getAccessibleContext().setAccessibleName("");
-
-        ButtonSalvar1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        ButtonSalvar1.setLabel("SALVAR");
-        ButtonSalvar1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonSalvar1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(ButtonSalvar1);
-        ButtonSalvar1.setBounds(740, 280, 110, 40);
+        ButtonVoltar.setBounds(740, 810, 110, 40);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -141,13 +169,21 @@ public class CadastroLista extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TextFieldProvaActionPerformed
 
+    private void ButtonEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEditarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonEditarActionPerformed
+
+    private void ButtonDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonDeletarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonDeletarActionPerformed
+
+    private void ButtonSalvar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSalvar2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonSalvar2ActionPerformed
+
     private void ButtonVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonVoltarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ButtonVoltarActionPerformed
-
-    private void ButtonSalvar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSalvar1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ButtonSalvar1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -185,7 +221,9 @@ public class CadastroLista extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton ButtonSalvar1;
+    private javax.swing.JButton ButtonDeletar;
+    private javax.swing.JButton ButtonEditar;
+    private javax.swing.JButton ButtonSalvar2;
     private javax.swing.JButton ButtonVoltar;
     private javax.swing.JTextArea TextAreaItensCadastrados;
     private javax.swing.JTextField TextFieldAtividade;
@@ -197,6 +235,7 @@ public class CadastroLista extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
