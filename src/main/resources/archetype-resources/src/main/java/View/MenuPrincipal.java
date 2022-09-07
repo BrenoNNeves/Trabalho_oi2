@@ -27,7 +27,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jToggleButtonCadastroAtividades = new javax.swing.JToggleButton();
         jToggleButtonCadastroDados = new javax.swing.JToggleButton();
-        jToggleButtonBuscarAtv = new javax.swing.JToggleButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1000, 900));
@@ -36,17 +36,17 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jToggleButtonCadastroAtividades.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jToggleButtonCadastroAtividades.setText("CADASTRO ATIVIDADES");
         getContentPane().add(jToggleButtonCadastroAtividades);
-        jToggleButtonCadastroAtividades.setBounds(360, 300, 260, 40);
+        jToggleButtonCadastroAtividades.setBounds(370, 270, 260, 40);
 
         jToggleButtonCadastroDados.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jToggleButtonCadastroDados.setText("CADASTRO DADOS");
+        jToggleButtonCadastroDados.setText("LISTAGEM DADOS");
         getContentPane().add(jToggleButtonCadastroDados);
-        jToggleButtonCadastroDados.setBounds(360, 230, 260, 40);
+        jToggleButtonCadastroDados.setBounds(370, 360, 260, 40);
 
-        jToggleButtonBuscarAtv.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jToggleButtonBuscarAtv.setText("BUSCAR ATIVIDADES");
-        getContentPane().add(jToggleButtonBuscarAtv);
-        jToggleButtonBuscarAtv.setBounds(360, 370, 260, 40);
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel1.setText("CONTROLE DE ATIVIDADES");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(410, 10, 170, 16);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -87,7 +87,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton jToggleButtonBuscarAtv;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JToggleButton jToggleButtonCadastroAtividades;
     private javax.swing.JToggleButton jToggleButtonCadastroDados;
     // End of variables declaration//GEN-END:variables
