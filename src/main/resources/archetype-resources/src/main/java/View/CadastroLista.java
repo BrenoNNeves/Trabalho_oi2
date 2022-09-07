@@ -16,21 +16,138 @@ public class CadastroLista extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        TextFieldDate = new javax.swing.JTextField();
+        TextFieldDisciplina = new javax.swing.JTextField();
+        TextFieldAtividade = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        TextAreaItensCadastrados = new javax.swing.JTextArea();
+        jLabel4 = new javax.swing.JLabel();
+        TextFieldProva = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        ButtonVoltar = new javax.swing.JButton();
+        ButtonSalvar1 = new javax.swing.JButton();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximizedBounds(new java.awt.Rectangle(1000, 1000, 1000, 10000));
+        setMaximumSize(new java.awt.Dimension(10000, 10000));
+        setMinimumSize(new java.awt.Dimension(1000, 900));
+        getContentPane().setLayout(null);
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setText("ATIVIDADES/PROVAS CADASTRADAS:");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(20, 330, 370, 47);
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel2.setText("DISCPLINA:");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(20, 30, 109, 47);
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel3.setText("ATIVIDADE:");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(20, 90, 109, 47);
+
+        TextFieldDate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TextFieldDateActionPerformed(evt);
+            }
+        });
+        getContentPane().add(TextFieldDate);
+        TextFieldDate.setBounds(140, 220, 709, 33);
+
+        TextFieldDisciplina.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TextFieldDisciplinaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(TextFieldDisciplina);
+        TextFieldDisciplina.setBounds(140, 40, 709, 33);
+
+        TextFieldAtividade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TextFieldAtividadeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(TextFieldAtividade);
+        TextFieldAtividade.setBounds(140, 100, 709, 33);
+
+        TextAreaItensCadastrados.setColumns(20);
+        TextAreaItensCadastrados.setRows(5);
+        jScrollPane1.setViewportView(TextAreaItensCadastrados);
+
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(140, 380, 709, 450);
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel4.setText("PROVA:");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(20, 150, 109, 47);
+
+        TextFieldProva.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TextFieldProvaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(TextFieldProva);
+        TextFieldProva.setBounds(140, 160, 709, 33);
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel5.setText("DATA:");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(20, 210, 109, 47);
+
+        ButtonVoltar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        ButtonVoltar.setText("VOLTAR");
+        ButtonVoltar.setActionCommand("VOLTAR");
+        ButtonVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonVoltarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(ButtonVoltar);
+        ButtonVoltar.setBounds(600, 280, 110, 40);
+        ButtonVoltar.getAccessibleContext().setAccessibleName("");
+
+        ButtonSalvar1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        ButtonSalvar1.setLabel("SALVAR");
+        ButtonSalvar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonSalvar1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(ButtonSalvar1);
+        ButtonSalvar1.setBounds(740, 280, 110, 40);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void TextFieldDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldDateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextFieldDateActionPerformed
+
+    private void TextFieldDisciplinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldDisciplinaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextFieldDisciplinaActionPerformed
+
+    private void TextFieldAtividadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldAtividadeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextFieldAtividadeActionPerformed
+
+    private void TextFieldProvaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldProvaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextFieldProvaActionPerformed
+
+    private void ButtonVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonVoltarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonVoltarActionPerformed
+
+    private void ButtonSalvar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSalvar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonSalvar1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -68,5 +185,18 @@ public class CadastroLista extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ButtonSalvar1;
+    private javax.swing.JButton ButtonVoltar;
+    private javax.swing.JTextArea TextAreaItensCadastrados;
+    private javax.swing.JTextField TextFieldAtividade;
+    private javax.swing.JTextField TextFieldDate;
+    private javax.swing.JTextField TextFieldDisciplina;
+    private javax.swing.JTextField TextFieldProva;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
