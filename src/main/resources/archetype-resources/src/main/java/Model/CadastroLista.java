@@ -11,7 +11,7 @@ public class CadastroLista {
         this.nomeAtv = nomeAtv;
         this.dataAtv = dataAtv;
         this.materiaAtv = materiaAtv;
-        this.dataAtv = idAtv;
+        this.idAtv = idAtv;
     }
 
     public int getIdAtv() {
