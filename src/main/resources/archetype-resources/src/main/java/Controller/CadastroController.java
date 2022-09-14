@@ -23,7 +23,7 @@ public class CadastroController {
     }
     
     //PROCURAR/LISTAR
-    public static List<Cadastro> procurar(String nome){
+    public static List<Cadastro> procurar(String nomeAtv){
         List<Cadastro> listaResposta = null;
         
         //Tenta fazer a busca dos dados 
@@ -34,7 +34,7 @@ public class CadastroController {
                 listaResposta = CadastroDao.listar();
             } else {
                 
-                listaResposta = CadastroDao.procurar(nome);
+                listaResposta = CadastroDao.procurar(nomeAtv);
             }
 
         } catch (Exception e) {
