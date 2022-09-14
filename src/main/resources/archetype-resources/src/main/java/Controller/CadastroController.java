@@ -1,6 +1,6 @@
 package Controller;
 
-import 
+import archetype-resources.src.main.java.Model;
 
 import java.util.List;
 
@@ -29,7 +29,7 @@ public class CadastroController {
         //Tenta fazer a busca dos dados 
         try{
         
-            if (nome == null || "".equals(nome)) {
+            if (nome == null || "".equals(nomeAtv)) {
                 
                 listaResposta = CadastroDao.listar();
             } else {
@@ -85,7 +85,7 @@ public class CadastroController {
     //OBTER POR ID
     public static Cadastro obter(Integer id) {
         
-        //Instancia cliente para retornar no fim da funcao
+        //Instancia cadastro para retornar no fim da funcao
         CadastroLista cadastro =  new CadastroLista();
         
         try 
