@@ -91,7 +91,7 @@ public class CadastroController {
         try 
         {
             //tenta obter o item procurado
-            cliente = ClienteDao.obter(id);
+            cadastro = CadastroDao.obter(id);
         } 
         catch (Exception e) 
         {
@@ -99,7 +99,7 @@ public class CadastroController {
             e.printStackTrace();
         }
 
-        return cliente;
+        return cadastro;
     }
     
     //OBTER POR ATIVIDADE
@@ -115,9 +115,9 @@ public class CadastroController {
         } 
         catch (Exception e) 
         {
-            return cliente = null;
+            return cadastro = null;
         }
 
-        return cliente;
+        return cadastro;
     }
 }
