@@ -52,7 +52,7 @@ public class atividadeDAO{
         
         String sql = "SELECT  id, nome, dat, materia, concluido "
                 + "FROM atividade.cad";
-        List<Cadastro> listaClientes = null;
+        List<Cadastro> listaCadastro = null;
         
         Connection connection = null;
         PreparedStatement preparedStatement = null;
@@ -64,8 +64,8 @@ public class atividadeDAO{
             result = preparedStatement.executeQuery();
             
             while (result.next()) {
-                if (listaClientes == null) {
-                    listaClientes = new ArrayList<Cadastro>();
+                if (listaCadastro == null) {
+                    listaCadastro = new ArrayList<Cadastro>();
                 }
                 CadastroLista cadastro = new CadastroLista();
                 cadastro.IdAtv(result.getInt("id"));
@@ -74,7 +74,7 @@ public class atividadeDAO{
                 cadastro.setDataAtv(result.getString("dat"));
                 cadastro.setStatus(result.getString("concluido"));
              
-                listaClientes.add(cadastro);
+                listaCadastro.add(cadastro);
             }
         }finally{
             if(result != null && !result.isClosed()){
@@ -87,7 +87,7 @@ public class atividadeDAO{
                 connection.close();
             }
         }
-        return listaClientes;
+        return listaCadastro;
     }
 
     public static List<CadastroLista> procurar(String nome)
@@ -95,7 +95,7 @@ public class atividadeDAO{
         
         String sql = "SELECT  id, nome, dat, materia, concluido"
                 + "FROM atividade.cad WHERE nome LIKE (?)";
-        List<CadastroLista> listaClientes = null;
+        List<CadastroLista> listaCadastro = null;
         
         Connection connection = null;
         PreparedStatement preparedStatement = null;
@@ -110,8 +110,8 @@ public class atividadeDAO{
             result = preparedStatement.executeQuery();
             
             while (result.next()) {
-                if (listaClientes == null) {
-                    listaClientes = new ArrayList<CadastroLista>();
+                if (listaCadastro == null) {
+                    listaCadastro = new ArrayList<CadastroLista>();
                 }
                 CadastroLista cadastro = new CadastroLista();
                 
@@ -121,7 +121,7 @@ public class atividadeDAO{
                 cadastro.setMateriaAtv(result.getString("materia"));
                 cadastro.setStatus(result.getString("concluido"));
                 
-                listaClientes.add(cadastro);
+                listaCadastro.add(cadastro);
             }
         }finally{
             if(result != null && !result.isClosed()){
@@ -134,7 +134,7 @@ public class atividadeDAO{
                 connection.close();
             }
         }
-        return listaClientes;
+        return listaCadastro;
     }
 
     public static CadastroLista obter(Integer id) 
