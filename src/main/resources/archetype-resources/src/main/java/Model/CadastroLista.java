@@ -5,6 +5,7 @@ public class CadastroLista {
     private String nomeAtv;
     private String dataAtv;
     private String materiaAtv;
+    private boolean status;   
     private int idAtv;
     
      public CadastroLista(String nomeAtv, String dataAtv, String materiaAtv, int idAtv) {
@@ -12,6 +13,14 @@ public class CadastroLista {
         this.dataAtv = dataAtv;
         this.materiaAtv = materiaAtv;
         this.idAtv = idAtv;
+    }
+     
+      public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 
     public int getIdAtv() {
