@@ -1,7 +1,6 @@
 package DAO;
 
 
-import CadastroLista;
 import archetype-resources.src.main.java.Model;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
