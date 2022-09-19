@@ -126,7 +126,7 @@ public class CadastroLista extends javax.swing.JFrame {
     }//GEN-LAST:event_ButtonSalvar2ActionPerformed
 
     private void ButtonVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonVoltarActionPerformed
-        // TODO add your handling code here:
+        new MenuPrincipal().setVisible(true);
     }//GEN-LAST:event_ButtonVoltarActionPerformed
 
     public static void main(String args[]) {
