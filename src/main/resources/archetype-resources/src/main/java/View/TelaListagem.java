@@ -106,7 +106,7 @@ public class TelaListagem extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonDeletarNomeActionPerformed
 
     private void jButtonVoltarNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoltarNomeActionPerformed
-        // TODO add your handling code here:
+        new MenuPrincipal().setVisible(true);
     }//GEN-LAST:event_jButtonVoltarNomeActionPerformed
 
     private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed
