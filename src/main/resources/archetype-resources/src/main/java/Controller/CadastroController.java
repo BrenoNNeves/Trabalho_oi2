@@ -105,8 +105,8 @@ public class CadastroController {
     //OBTER POR ATIVIDADE
     public static Cadastro obter2(String nomeAtv) {
         
-        //Instancia cliente para retornar no fim da funcao
-        CadastroLista cliente =  new CadastroLista();
+        //Instancia cadastro para retornar no fim da funcao
+        CadastroLista cadastro =  new CadastroLista();
         
         try 
         {
