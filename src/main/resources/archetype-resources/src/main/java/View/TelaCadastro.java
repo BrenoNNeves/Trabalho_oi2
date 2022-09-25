@@ -1,7 +1,14 @@
 
+import static DAO.atividadeDAO.salvar;
+import Model.CadastroLista;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+
 
 public class TelaCadastro extends javax.swing.JFrame {
     String diciplina,data,atividade;
+    CadastroLista cad = new CadastroLista("","","",0,false);
     public TelaCadastro() {
         
         initComponents();
@@ -121,12 +128,21 @@ public class TelaCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_TextFieldAtividadeActionPerformed
 
     private void ButtonSalvar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSalvar2ActionPerformed
-        // TODO add your handling code here:
-        atividade = TextFieldDisciplina.getText();
-        data = TextFieldDate.getText();
-        atividade =TextFieldAtividade.getText();
-        
-        CadatroLista cad = new TelaCadastro();
+        try {
+            // TODO add your handling code here:
+            diciplina = TextFieldDisciplina.getText();
+            data = TextFieldDate.getText();
+            atividade =TextFieldAtividade.getText();
+            
+            cad.setNomeAtv(atividade);
+            cad.setDataAtv(data);
+            cad.setMateriaAtv(diciplina);
+            cad.setStatus(false);
+            
+            salvar(cad);
+        } catch (Exception ex) {
+            Logger.getLogger(TelaCadastro.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
     }//GEN-LAST:event_ButtonSalvar2ActionPerformed
 

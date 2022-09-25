@@ -4,7 +4,7 @@
   <groupId>org.example</groupId>
   <artifactId>untitled</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <name>Archetype - untitled</name>
+  <name>Projeto_oi2</name>
   <url>http://maven.apache.org</url>
     <dependencies>
         <dependency>

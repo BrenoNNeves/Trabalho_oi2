@@ -1,9 +1,11 @@
 package Main;
 
+
+import View;
 public class App 
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        new MenuPrincipal().setVisible(true);
     }
 }
