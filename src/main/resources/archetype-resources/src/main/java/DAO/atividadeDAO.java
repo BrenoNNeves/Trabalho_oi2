@@ -1,7 +1,8 @@
 package DAO;
 
 
-import archetype-resources.src.main.java.Model;
+import Model.CadastroLista;
+//import archetype-resources.src.main.java.Model;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -51,7 +52,7 @@ public class atividadeDAO{
         
         String sql = "SELECT  id, nome, dat, materia, concluido "
                 + "FROM atividade.cad";
-        List<Cadastro> listaCadastro = null;
+        List<CadastroLista> listaCadastro = null;
         
         Connection connection = null;
         PreparedStatement preparedStatement = null;
@@ -64,14 +65,14 @@ public class atividadeDAO{
             
             while (result.next()) {
                 if (listaCadastro == null) {
-                    listaCadastro = new ArrayList<Cadastro>();
+                    listaCadastro = new ArrayList<CadastroLista>();
                 }
-                CadastroLista cadastro = new CadastroLista();
-                cadastro.IdAtv(result.getInt("id"));
+                CadastroLista cadastro = new CadastroLista("","","",1,false);
+                cadastro.setIdAtv(result.getInt("id"));
                 cadastro.setNomeAtv(result.getString("nome"));
                 cadastro.setMateriaAtv(result.getString("materia"));
                 cadastro.setDataAtv(result.getString("dat"));
-                cadastro.setStatus(result.getString("concluido"));
+                cadastro.setStatus(result.getBoolean("concluido"));
              
                 listaCadastro.add(cadastro);
             }
@@ -112,13 +113,13 @@ public class atividadeDAO{
                 if (listaCadastro == null) {
                     listaCadastro = new ArrayList<CadastroLista>();
                 }
-                CadastroLista cadastro = new CadastroLista();
+                CadastroLista cadastro = new CadastroLista("","","",1,false);
                 
                 cadastro.setIdAtv(result.getInt("id"));
                 cadastro.setNomeAtv(result.getString("nome"));
                 cadastro.setDataAtv(result.getString("dat"));
                 cadastro.setMateriaAtv(result.getString("materia"));
-                cadastro.setStatus(result.getString("concluido"));
+                cadastro.setStatus(result.getBoolean("concluido"));
                 
                 listaCadastro.add(cadastro);
             }
@@ -153,13 +154,13 @@ public class atividadeDAO{
             result = preparedStatement.executeQuery();
             
             if(result.next()){
-                CadastroLista cadastro = new CadastroLista();
+                CadastroLista cadastro = new CadastroLista("","","",1,false);
                 
                 cadastro.setIdAtv(result.getInt("id"));
                 cadastro.setNomeAtv(result.getString("nome"));
                 cadastro.setDataAtv(result.getString("dat"));
                 cadastro.setMateriaAtv(result.getString("materia"));
-                cadastro.setStatus(result.getString("concluido"));       
+                cadastro.setStatus(result.getBoolean("concluido"));       
                 
                 return cadastro;
             }
@@ -192,11 +193,11 @@ public class atividadeDAO{
             connection = ConnectionUtils.obterConexao();
             preparedStatement = connection.prepareStatement(sql);
             
-            preparedStatement.setInt(1, cadastroAtualizado.getId());
+            preparedStatement.setInt(1, cadastroAtualizado.getIdAtv());
             preparedStatement.setString(1, cadastroAtualizado.getNomeAtv());
             preparedStatement.setString(2, cadastroAtualizado.getDataAtv());
             preparedStatement.setString(3, cadastroAtualizado.getMateriaAtv());
-            preparedStatement.setString(4, cadastroAtualizado.getStatusAtv());            
+            preparedStatement.setBoolean(4, cadastroAtualizado.isStatus());            
 
             //Executa o comando no banco de dados
             preparedStatement.executeUpdate();

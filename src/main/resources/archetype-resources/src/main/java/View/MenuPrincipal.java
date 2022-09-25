@@ -47,7 +47,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jToggleButtonCadastroAtividadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonCadastroAtividadesActionPerformed
-        new CadastroLista().setVisible(true);
+        new TelaCadastro().setVisible(true);
         new MenuPrincipal().dispose();
     }//GEN-LAST:event_jToggleButtonCadastroAtividadesActionPerformed
 

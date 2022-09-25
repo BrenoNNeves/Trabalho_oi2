@@ -1,9 +1,8 @@
-/**
- * @author Charlie
- */
-public class CadastroLista extends javax.swing.JFrame {
 
-    public CadastroLista() {
+
+public class TelaCadastro extends javax.swing.JFrame {
+    String diciplina,data,atividade;
+    public TelaCadastro() {
         
         initComponents();
     }
@@ -26,7 +25,6 @@ public class CadastroLista extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximizedBounds(new java.awt.Rectangle(1000, 1000, 1000, 10000));
-        setMaximumSize(new java.awt.Dimension(10000, 10000));
         setMinimumSize(new java.awt.Dimension(1000, 900));
         getContentPane().setLayout(null);
 
@@ -115,6 +113,7 @@ public class CadastroLista extends javax.swing.JFrame {
 
     private void TextFieldDisciplinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldDisciplinaActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_TextFieldDisciplinaActionPerformed
 
     private void TextFieldAtividadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldAtividadeActionPerformed
@@ -123,6 +122,12 @@ public class CadastroLista extends javax.swing.JFrame {
 
     private void ButtonSalvar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSalvar2ActionPerformed
         // TODO add your handling code here:
+        atividade = TextFieldDisciplina.getText();
+        data = TextFieldDate.getText();
+        atividade =TextFieldAtividade.getText();
+        
+        CadatroLista cad = new TelaCadastro();
+        
     }//GEN-LAST:event_ButtonSalvar2ActionPerformed
 
     private void ButtonVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonVoltarActionPerformed
@@ -133,7 +138,7 @@ public class CadastroLista extends javax.swing.JFrame {
   
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CadastroLista().setVisible(true);
+                new TelaCadastro().setVisible(true);
             }
         });
     }

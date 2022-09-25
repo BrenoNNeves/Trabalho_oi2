@@ -8,14 +8,15 @@ public class CadastroLista {
     private boolean status;   
     private int idAtv;
     
-     public CadastroLista(String nomeAtv, String dataAtv, String materiaAtv, int idAtv) {
+     public CadastroLista(String nomeAtv, String dataAtv, String materiaAtv, int idAtv, boolean status) {
         this.nomeAtv = nomeAtv;
         this.dataAtv = dataAtv;
         this.materiaAtv = materiaAtv;
         this.idAtv = idAtv;
+        this.status = status;
     }
      
-      public boolean isStatus() {
+    public boolean isStatus() {
         return status;
     }
 
