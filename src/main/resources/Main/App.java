@@ -1,7 +1,9 @@
 package Main;
 
 
-import View;
+import View.MenuPrincipal;
+
+
 public class App 
 {
     public static void main( String[] args )

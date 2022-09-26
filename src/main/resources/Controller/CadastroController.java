@@ -1,3 +1,5 @@
+package Controller;
+
 /*package Controller;
 
 import archetype-resources.src.main.java.Model;
