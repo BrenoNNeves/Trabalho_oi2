@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 
 public class TelaCadastro extends javax.swing.JFrame {
     String diciplina,data,atividade;
-    CadastroLista cad = new CadastroLista("","","",0,false);
+    CadastroLista cad = new CadastroLista();
     public TelaCadastro() {
         
         initComponents();
