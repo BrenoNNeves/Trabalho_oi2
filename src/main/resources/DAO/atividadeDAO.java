@@ -2,7 +2,6 @@ package DAO;
 
 
 import Model.CadastroLista;
-//import archetype-resources.src.main.java.Model;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -67,7 +66,7 @@ public class atividadeDAO{
                 if (listaCadastro == null) {
                     listaCadastro = new ArrayList<CadastroLista>();
                 }
-                CadastroLista cadastro = new CadastroLista("","","",1,false);
+                CadastroLista cadastro = new CadastroLista();
                 cadastro.setIdAtv(result.getInt("id"));
                 cadastro.setNomeAtv(result.getString("nome"));
                 cadastro.setMateriaAtv(result.getString("materia"));
@@ -113,7 +112,7 @@ public class atividadeDAO{
                 if (listaCadastro == null) {
                     listaCadastro = new ArrayList<CadastroLista>();
                 }
-                CadastroLista cadastro = new CadastroLista("","","",1,false);
+                CadastroLista cadastro = new CadastroLista();
                 
                 cadastro.setIdAtv(result.getInt("id"));
                 cadastro.setNomeAtv(result.getString("nome"));
@@ -154,7 +153,7 @@ public class atividadeDAO{
             result = preparedStatement.executeQuery();
             
             if(result.next()){
-                CadastroLista cadastro = new CadastroLista("","","",1,false);
+                CadastroLista cadastro = new CadastroLista();
                 
                 cadastro.setIdAtv(result.getInt("id"));
                 cadastro.setNomeAtv(result.getString("nome"));

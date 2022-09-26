@@ -31,7 +31,7 @@ public class CadastroController {
         //Tenta fazer a busca dos dados 
         try{
         
-            if (nome == null || "".equals(nomeAtv)) {
+            if (nomeAtv == null || "".equals(nomeAtv)) {
                 
                 listaResposta = atividadeDAO.listar();
             } else {
@@ -88,12 +88,12 @@ public class CadastroController {
     public static CadastroLista obter(Integer id) {
         
         //Instancia cadastro para retornar no fim da funcao
-        atividadeDAO cadastro =  new atividadeDAO();
+        CadastroLista cadastro =  new CadastroLista();
         
         try 
         {
             //tenta obter o item procurado
-             cadastro.obter(id);
+             cadastro = atividadeDAO.obter(id);
         } 
         catch (Exception e) 
         {
@@ -108,7 +108,7 @@ public class CadastroController {
     public static CadastroLista obter2(String nomeAtv) {
         
         //Instancia cadastro para retornar no fim da funcao
-        atividadeDAO cadastro =  new atividadeDAO();
+        CadastroLista cadastro =  new CadastroLista();
         
         try 
         {
