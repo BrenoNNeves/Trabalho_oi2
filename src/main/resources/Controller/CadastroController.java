@@ -1,6 +1,6 @@
 package Controller;
 
-/*package Controller;
+package Controller;
 
 import archetype-resources.src.main.java.Model;
 
@@ -123,4 +123,3 @@ public class CadastroController {
         return cadastro;
     }
 }
-*/
