@@ -13,7 +13,7 @@ public class ConnectionUtils {
         
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection conn = DriverManager.getConnection
-            ("jdbc:mysql://localhost:3306/atividade?useTimezone=true&serverTimezone=UTC","root", "5640");
+            ("jdbc:mysql://localhost:3306/atividade?useTimezone=true&serverTimezone=UTC","root", "");
         return conn;
     }
     
