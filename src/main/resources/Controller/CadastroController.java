@@ -1,21 +1,21 @@
 package Controller;
 
-package Controller;
 
-import archetype-resources.src.main.java.Model;
+import Model.CadastroLista;
+import DAO.atividadeDAO;
 
 import java.util.List;
 
 public class CadastroController {
     
     //SALVAR
-    public static String salvar(Cadastro cadastro){
+    public static String salvar(CadastroLista cadastro){
         
         String resposta = null;
         
         //Tenta fazer a insercao
         try{
-            CadastroDao.salvar(cadastro);
+            atividadeDAO.salvar(cadastro);
         }catch (Exception e){
             e.printStackTrace();
             resposta = "Erro na fonte de dados";
@@ -25,18 +25,18 @@ public class CadastroController {
     }
     
     //PROCURAR/LISTAR
-    public static List<Cadastro> procurar(String nomeAtv){
-        List<Cadastro> listaResposta = null;
+    public static List<CadastroLista> procurar(String nomeAtv){
+        List<CadastroLista> listaResposta = null;
         
         //Tenta fazer a busca dos dados 
         try{
         
             if (nome == null || "".equals(nomeAtv)) {
                 
-                listaResposta = CadastroDao.listar();
+                listaResposta = atividadeDAO.listar();
             } else {
                 
-                listaResposta = CadastroDao.procurar(nomeAtv);
+                listaResposta = atividadeDAO.procurar(nomeAtv);
             }
 
         } catch (Exception e) {
@@ -47,14 +47,14 @@ public class CadastroController {
     }
     
     //ATUALIZAR
-    public static String atualizar(Cadastro cadastro) 
+    public static String atualizar(CadastroLista cadastro) 
     {
         String resposta = null;
 
         try
         {
             //tenta fazer a atualizacao
-            CadastroDao.atualizar(cadastro);
+            atividadeDAO.atualizar(cadastro);
         } 
         catch (Exception e) 
         {   
@@ -74,7 +74,7 @@ public class CadastroController {
         {   
             //tenta excluir 
             
-            CadastroDao.excluir(id);
+            atividadeDAO.excluir(id);
         } catch (Exception e) 
         {
             //em caso de erro retorna erro para a classe que chamou
@@ -85,15 +85,15 @@ public class CadastroController {
     }
     
     //OBTER POR ID
-    public static Cadastro obter(Integer id) {
+    public static CadastroLista obter(Integer id) {
         
         //Instancia cadastro para retornar no fim da funcao
-        CadastroLista cadastro =  new CadastroLista();
+        atividadeDAO cadastro =  new atividadeDAO();
         
         try 
         {
             //tenta obter o item procurado
-            cadastro = CadastroDao.obter(id);
+             cadastro.obter(id);
         } 
         catch (Exception e) 
         {
@@ -105,15 +105,15 @@ public class CadastroController {
     }
     
     //OBTER POR ATIVIDADE
-    public static Cadastro obter2(String nomeAtv) {
+    public static CadastroLista obter2(String nomeAtv) {
         
         //Instancia cadastro para retornar no fim da funcao
-        CadastroLista cadastro =  new CadastroLista();
+        atividadeDAO cadastro =  new atividadeDAO();
         
         try 
         {
             //tenta obter a atividade procurada
-            cadastro = CadastroDao.obter2(nomeAtv);
+           // cadastro = atividadeDAO.obter(nomeAtv);
         } 
         catch (Exception e) 
         {
