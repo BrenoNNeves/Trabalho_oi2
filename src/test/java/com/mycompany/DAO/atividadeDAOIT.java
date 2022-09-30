@@ -60,8 +60,7 @@ public class atividadeDAOIT {
         List<CadastroLista> expResult = null;
         List<CadastroLista> result = atividadeDAO.listar();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        fail("Teste listar");
     }
 
     /**
@@ -74,8 +73,7 @@ public class atividadeDAOIT {
         List<CadastroLista> expResult = null;
         List<CadastroLista> result = atividadeDAO.procurar(nome);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        fail("Teste procurar.");
     }
 
     /**
@@ -88,8 +86,7 @@ public class atividadeDAOIT {
         CadastroLista expResult = null;
         CadastroLista result = atividadeDAO.obter(id);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        fail("Teste obter");
     }
 
     /**
@@ -100,8 +97,7 @@ public class atividadeDAOIT {
         System.out.println("atualizar");
         CadastroLista cadastroAtualizado = null;
         atividadeDAO.atualizar(cadastroAtualizado);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        fail("Teste atualizar");
     }
 
     /**
@@ -112,8 +108,7 @@ public class atividadeDAOIT {
         System.out.println("excluir");
         Integer id = null;
         atividadeDAO.excluir(id);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        fail("Teste excluir");
     }
     
 }
