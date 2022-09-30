@@ -45,7 +45,7 @@ public class Mavenproject_oi21IT {
         System.out.println("main");
         String[] args = null;
         Mavenproject_oi21.main(args);
-        fail("The test case is a prototype.");
+        fail("Test Main");
     }
     
 }
