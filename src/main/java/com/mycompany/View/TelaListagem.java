@@ -1,14 +1,27 @@
 package com.mycompany.View;
 
+import Model.CadastroLista;
+import com.mycompany.DAO.atividadeDAO;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  * @author Charlie
  */
 public class TelaListagem extends javax.swing.JFrame {
 
+    atividadeDAO atv = new atividadeDAO();
+    int id;
+
     public TelaListagem() {
-        
+
         initComponents();
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -17,12 +30,12 @@ public class TelaListagem extends javax.swing.JFrame {
         jButtonDeletarNome = new javax.swing.JButton();
         jButtonVoltarNome = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextAreaDadosEventos1 = new javax.swing.JTextArea();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jTextFieldBuscar = new javax.swing.JTextField();
         jButtonBuscar = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tabela_atividade = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1000, 900));
@@ -66,13 +79,6 @@ public class TelaListagem extends javax.swing.JFrame {
         getContentPane().add(jLabel7);
         jLabel7.setBounds(390, 10, 250, 25);
 
-        jTextAreaDadosEventos1.setColumns(20);
-        jTextAreaDadosEventos1.setRows(5);
-        jScrollPane2.setViewportView(jTextAreaDadosEventos1);
-
-        getContentPane().add(jScrollPane2);
-        jScrollPane2.setBounds(80, 270, 740, 460);
-
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel8.setText("BUSCAR:");
         getContentPane().add(jLabel8);
@@ -83,7 +89,7 @@ public class TelaListagem extends javax.swing.JFrame {
         getContentPane().add(jLabel9);
         jLabel9.setBounds(30, 230, 250, 25);
         getContentPane().add(jTextFieldBuscar);
-        jTextFieldBuscar.setBounds(80, 140, 740, 30);
+        jTextFieldBuscar.setBounds(70, 140, 750, 30);
 
         jButtonBuscar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButtonBuscar.setText("BUSCAR");
@@ -96,6 +102,22 @@ public class TelaListagem extends javax.swing.JFrame {
         getContentPane().add(jButtonBuscar);
         jButtonBuscar.setBounds(720, 190, 100, 40);
 
+        tabela_atividade.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(tabela_atividade);
+
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(70, 280, 750, 460);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -104,7 +126,11 @@ public class TelaListagem extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonEditarNomeActionPerformed
 
     private void jButtonDeletarNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDeletarNomeActionPerformed
-        // TODO add your handling code here:
+        try {
+            atividadeDAO.excluir(id);
+        } catch (Exception ex) {
+            Logger.getLogger(TelaListagem.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButtonDeletarNomeActionPerformed
 
     private void jButtonVoltarNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoltarNomeActionPerformed
@@ -112,11 +138,11 @@ public class TelaListagem extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonVoltarNomeActionPerformed
 
     private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed
-        // TODO add your handling code here:
+        listaratv();
     }//GEN-LAST:event_jButtonBuscarActionPerformed
 
     public static void main(String args[]) {
-  
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
@@ -133,8 +159,30 @@ public class TelaListagem extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextAreaDadosEventos1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextFieldBuscar;
+    private javax.swing.JTable tabela_atividade;
     // End of variables declaration//GEN-END:variables
+
+    private void listaratv(){
+        try {
+            atividadeDAO objatv = new atividadeDAO();
+
+            DefaultTableModel model = (DefaultTableModel) tabela_atividade.getModel();
+            model.setNumRows(0);
+            ArrayList<CadastroLista> lista = (ArrayList<CadastroLista>) atividadeDAO.listar();
+
+            for (int num = 0; num < lista.size(); num++) {
+                model.addRow(new Object[]{
+                    lista.get(num).getIdAtv(),
+                    lista.get(num).getDataAtv(),
+                    lista.get(num).getMateriaAtv(),
+                    lista.get(num).getNomeAtv(),
+                    lista.get(num).isStatus()
+                });
+            }
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, "Listar Atividades" + erro);
+        }
+    }
 }
