@@ -49,8 +49,7 @@ public class atividadeDAO{
     public static List<CadastroLista> listar()
         throws SQLException, Exception {
         
-        String sql = "SELECT  id, nome, dat, materia, concluido "
-                + "FROM atividade.cad";
+        String sql = "SELECT * cad";
         List<CadastroLista> listaCadastro = null;
         
         Connection connection = null;
