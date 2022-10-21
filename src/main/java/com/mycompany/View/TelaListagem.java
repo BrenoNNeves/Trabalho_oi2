@@ -17,6 +17,7 @@ public class TelaListagem extends javax.swing.JFrame {
     atividadeDAO atv = new atividadeDAO();
     int id;
 
+    String busca;
     public TelaListagem() {
 
         initComponents();
@@ -104,13 +105,13 @@ public class TelaListagem extends javax.swing.JFrame {
 
         tabela_atividade.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Id", "Data", "Matéria", "Nome", "Finalizado"
             }
         ));
         jScrollPane1.setViewportView(tabela_atividade);
@@ -138,7 +139,11 @@ public class TelaListagem extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonVoltarNomeActionPerformed
 
     private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed
-        listaratv();
+        try {
+            listaratv();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }//GEN-LAST:event_jButtonBuscarActionPerformed
 
     public static void main(String args[]) {
@@ -164,13 +169,14 @@ public class TelaListagem extends javax.swing.JFrame {
     private javax.swing.JTable tabela_atividade;
     // End of variables declaration//GEN-END:variables
 
-    private void listaratv(){
+    private void listaratv() throws Exception {
         try {
             atividadeDAO objatv = new atividadeDAO();
+            busca = jTextFieldBuscar.getText();
 
             DefaultTableModel model = (DefaultTableModel) tabela_atividade.getModel();
             model.setNumRows(0);
-            ArrayList<CadastroLista> lista = (ArrayList<CadastroLista>) atividadeDAO.listar();
+            ArrayList<CadastroLista> lista = (ArrayList<CadastroLista>) atividadeDAO.procurar(busca);
 
             for (int num = 0; num < lista.size(); num++) {
                 model.addRow(new Object[]{
@@ -178,7 +184,7 @@ public class TelaListagem extends javax.swing.JFrame {
                     lista.get(num).getDataAtv(),
                     lista.get(num).getMateriaAtv(),
                     lista.get(num).getNomeAtv(),
-                    lista.get(num).isStatus()
+                    lista.get(num).isStatus() ? "Finalizado" : "Não Finalizado"
                 });
             }
         } catch (SQLException erro) {

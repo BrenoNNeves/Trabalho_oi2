@@ -91,7 +91,7 @@ public class atividadeDAO{
     public static List<CadastroLista> procurar(String nome)
         throws SQLException, Exception {
         
-        String sql = "SELECT  id, nome, dat, materia, concluido"
+        String sql = "SELECT  id, nome, dat, materia, concluido "
                 + "FROM atividade.cad WHERE nome LIKE (?)";
         List<CadastroLista> listaCadastro = null;
         
