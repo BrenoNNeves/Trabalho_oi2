@@ -134,6 +134,52 @@ public class atividadeDAO{
         }
         return listaCadastro;
     }
+        public static List<CadastroLista> procurarDt(String data)
+        throws SQLException, Exception {
+        
+        String sql = "SELECT  id, nome, dat, materia, concluido "
+                + "FROM atividade.cad WHERE dat LIKE (?)";
+        List<CadastroLista> listaCadastro = null;
+        
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet result = null;        
+        
+        try{
+            connection = ConnectionUtils.obterConexao();
+            preparedStatement = connection.prepareStatement(sql);
+            
+            preparedStatement.setString(1, "%" + data + "%");
+            
+            result = preparedStatement.executeQuery();
+            
+            while (result.next()) {
+                if (listaCadastro == null) {
+                    listaCadastro = new ArrayList<CadastroLista>();
+                }
+                CadastroLista cadastro = new CadastroLista();
+                
+                cadastro.setIdAtv(result.getInt("id"));
+                cadastro.setNomeAtv(result.getString("nome"));
+                cadastro.setDataAtv(result.getString("dat"));
+                cadastro.setMateriaAtv(result.getString("materia"));
+                cadastro.setStatus(result.getBoolean("concluido"));
+                
+                listaCadastro.add(cadastro);
+            }
+        }finally{
+            if(result != null && !result.isClosed()){
+                result.close();
+            }
+            if (preparedStatement != null && !preparedStatement.isClosed()) {
+                preparedStatement.close();
+            }
+            if (connection != null && !connection.isClosed()) {
+                connection.close();
+            }
+        }
+        return listaCadastro;
+    }
 
     public static CadastroLista obter(Integer id) 
         throws SQLException, Exception {
