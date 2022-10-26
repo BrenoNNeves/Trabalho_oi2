@@ -25,12 +25,12 @@ public class TelaCadastro extends javax.swing.JFrame {
         TextFieldDate = new javax.swing.JTextField();
         TextFieldDisciplina = new javax.swing.JTextField();
         TextFieldAtividade = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        TextAreaItensCadastrados = new javax.swing.JTextArea();
         jLabel6 = new javax.swing.JLabel();
         ButtonSalvar2 = new javax.swing.JButton();
         ButtonVoltar = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        TabelaListagemATVCad = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximizedBounds(new java.awt.Rectangle(1000, 1000, 1000, 10000));
@@ -76,13 +76,6 @@ public class TelaCadastro extends javax.swing.JFrame {
         getContentPane().add(TextFieldAtividade);
         TextFieldAtividade.setBounds(140, 140, 709, 33);
 
-        TextAreaItensCadastrados.setColumns(20);
-        TextAreaItensCadastrados.setRows(5);
-        jScrollPane1.setViewportView(TextAreaItensCadastrados);
-
-        getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(140, 410, 709, 370);
-
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel6.setText("DISCIPLINA:");
         getContentPane().add(jLabel6);
@@ -112,6 +105,22 @@ public class TelaCadastro extends javax.swing.JFrame {
         jLabel7.setText("DATA:");
         getContentPane().add(jLabel7);
         jLabel7.setBounds(20, 190, 109, 47);
+
+        TabelaListagemATVCad.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(TabelaListagemATVCad);
+
+        getContentPane().add(jScrollPane2);
+        jScrollPane2.setBounds(40, 410, 810, 380);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -165,7 +174,7 @@ public class TelaCadastro extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonSalvar2;
     private javax.swing.JButton ButtonVoltar;
-    private javax.swing.JTextArea TextAreaItensCadastrados;
+    private javax.swing.JTable TabelaListagemATVCad;
     private javax.swing.JTextField TextFieldAtividade;
     private javax.swing.JTextField TextFieldDate;
     private javax.swing.JTextField TextFieldDisciplina;
@@ -174,6 +183,6 @@ public class TelaCadastro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
 }
