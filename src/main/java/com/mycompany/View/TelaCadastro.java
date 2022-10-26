@@ -108,19 +108,19 @@ public class TelaCadastro extends javax.swing.JFrame {
 
         TabelaListagemATVCad.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Id", "Data", "Matéria", "Nome", "Finalizado"
             }
         ));
         jScrollPane2.setViewportView(TabelaListagemATVCad);
 
         getContentPane().add(jScrollPane2);
-        jScrollPane2.setBounds(40, 410, 810, 380);
+        jScrollPane2.setBounds(60, 410, 790, 380);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
