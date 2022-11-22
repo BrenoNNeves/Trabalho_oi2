@@ -221,6 +221,7 @@ public class TelaListagem extends javax.swing.JFrame {
                     lista.get(num).isStatus() ? "Finalizado" : "Não Finalizado"
                 });
             }
+            
         } catch (SQLException erro) {
             JOptionPane.showMessageDialog(null, "Listar Atividades" + erro);
         }
