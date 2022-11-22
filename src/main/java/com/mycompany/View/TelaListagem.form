@@ -121,7 +121,7 @@
     <Component class="javax.swing.JTextField" name="jTextFieldBuscar">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="70" y="60" width="750" height="30"/>
+          <AbsoluteConstraints x="60" y="60" width="750" height="30"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -138,7 +138,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="720" y="110" width="100" height="40"/>
+          <AbsoluteConstraints x="710" y="110" width="100" height="40"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -206,11 +206,11 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="18" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="BUSCAR POR DATA(EX:dd/mm/aaaa):"/>
+        <Property name="text" type="java.lang.String" value="BUSCAR POR DATA (EX:dd/mm/aaaa):"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="20" y="120" width="360" height="-1"/>
+          <AbsoluteConstraints x="30" y="120" width="360" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -221,7 +221,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="jButtonBuscar1">
+    <Component class="javax.swing.JButton" name="jButtonBuscarData">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="1"/>
@@ -230,7 +230,7 @@
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonBuscar1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonBuscarDataActionPerformed"/>
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">

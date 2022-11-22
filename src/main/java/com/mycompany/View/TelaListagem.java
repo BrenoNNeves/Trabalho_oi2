@@ -39,7 +39,7 @@ public class TelaListagem extends javax.swing.JFrame {
         tabela_atividade = new javax.swing.JTable();
         jLabel10 = new javax.swing.JLabel();
         jTextFieldBuscarDt = new javax.swing.JTextField();
-        jButtonBuscar1 = new javax.swing.JButton();
+        jButtonBuscarData = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1000, 900));
@@ -93,7 +93,7 @@ public class TelaListagem extends javax.swing.JFrame {
         getContentPane().add(jLabel9);
         jLabel9.setBounds(30, 230, 250, 25);
         getContentPane().add(jTextFieldBuscar);
-        jTextFieldBuscar.setBounds(70, 60, 750, 30);
+        jTextFieldBuscar.setBounds(60, 60, 750, 30);
 
         jButtonBuscar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButtonBuscar.setText("BUSCAR");
@@ -104,7 +104,7 @@ public class TelaListagem extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButtonBuscar);
-        jButtonBuscar.setBounds(720, 110, 100, 40);
+        jButtonBuscar.setBounds(710, 110, 100, 40);
 
         tabela_atividade.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -123,22 +123,22 @@ public class TelaListagem extends javax.swing.JFrame {
         jScrollPane1.setBounds(70, 280, 750, 460);
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel10.setText("BUSCAR POR DATA(EX:dd/mm/aaaa):");
+        jLabel10.setText("BUSCAR POR DATA (EX:dd/mm/aaaa):");
         getContentPane().add(jLabel10);
-        jLabel10.setBounds(20, 120, 360, 25);
+        jLabel10.setBounds(30, 120, 360, 25);
         getContentPane().add(jTextFieldBuscarDt);
         jTextFieldBuscarDt.setBounds(60, 160, 750, 30);
 
-        jButtonBuscar1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButtonBuscar1.setText("BUSCAR");
-        jButtonBuscar1.setToolTipText("");
-        jButtonBuscar1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonBuscarData.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButtonBuscarData.setText("BUSCAR");
+        jButtonBuscarData.setToolTipText("");
+        jButtonBuscarData.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonBuscar1ActionPerformed(evt);
+                jButtonBuscarDataActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonBuscar1);
-        jButtonBuscar1.setBounds(710, 210, 100, 40);
+        getContentPane().add(jButtonBuscarData);
+        jButtonBuscarData.setBounds(710, 210, 100, 40);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -167,7 +167,7 @@ public class TelaListagem extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButtonBuscarActionPerformed
 
-    private void jButtonBuscar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscar1ActionPerformed
+    private void jButtonBuscarDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarDataActionPerformed
         try {
             // TODO add your handling code here:
             listaratvDt();
@@ -175,7 +175,7 @@ public class TelaListagem extends javax.swing.JFrame {
             Logger.getLogger(TelaListagem.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-    }//GEN-LAST:event_jButtonBuscar1ActionPerformed
+    }//GEN-LAST:event_jButtonBuscarDataActionPerformed
 
     public static void main(String args[]) {
 
@@ -189,7 +189,7 @@ public class TelaListagem extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonBuscar;
-    private javax.swing.JButton jButtonBuscar1;
+    private javax.swing.JButton jButtonBuscarData;
     private javax.swing.JButton jButtonDeletarNome;
     private javax.swing.JButton jButtonEditarNome;
     private javax.swing.JButton jButtonVoltarNome;
