@@ -37,6 +37,9 @@ public class TelaListagem extends javax.swing.JFrame {
         jButtonBuscar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabela_atividade = new javax.swing.JTable();
+        jLabel10 = new javax.swing.JLabel();
+        jTextFieldBuscarDt = new javax.swing.JTextField();
+        jButtonBuscarData = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1000, 900));
@@ -83,14 +86,14 @@ public class TelaListagem extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel8.setText("BUSCAR:");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(30, 100, 90, 25);
+        jLabel8.setBounds(30, 20, 90, 25);
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel9.setText("ATIVIDADES CADASTRADAS:");
         getContentPane().add(jLabel9);
         jLabel9.setBounds(30, 230, 250, 25);
         getContentPane().add(jTextFieldBuscar);
-        jTextFieldBuscar.setBounds(70, 140, 750, 30);
+        jTextFieldBuscar.setBounds(60, 60, 750, 30);
 
         jButtonBuscar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButtonBuscar.setText("BUSCAR");
@@ -101,7 +104,7 @@ public class TelaListagem extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButtonBuscar);
-        jButtonBuscar.setBounds(720, 190, 100, 40);
+        jButtonBuscar.setBounds(710, 110, 100, 40);
 
         tabela_atividade.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -118,6 +121,24 @@ public class TelaListagem extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(70, 280, 750, 460);
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel10.setText("BUSCAR POR DATA (EX:dd/mm/aaaa):");
+        getContentPane().add(jLabel10);
+        jLabel10.setBounds(30, 120, 360, 25);
+        getContentPane().add(jTextFieldBuscarDt);
+        jTextFieldBuscarDt.setBounds(60, 160, 750, 30);
+
+        jButtonBuscarData.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButtonBuscarData.setText("BUSCAR");
+        jButtonBuscarData.setToolTipText("");
+        jButtonBuscarData.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonBuscarDataActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonBuscarData);
+        jButtonBuscarData.setBounds(710, 210, 100, 40);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -146,6 +167,16 @@ public class TelaListagem extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButtonBuscarActionPerformed
 
+    private void jButtonBuscarDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarDataActionPerformed
+        try {
+            // TODO add your handling code here:
+            listaratvDt();
+        } catch (Exception ex) {
+            Logger.getLogger(TelaListagem.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_jButtonBuscarDataActionPerformed
+
     public static void main(String args[]) {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -158,14 +189,17 @@ public class TelaListagem extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonBuscar;
+    private javax.swing.JButton jButtonBuscarData;
     private javax.swing.JButton jButtonDeletarNome;
     private javax.swing.JButton jButtonEditarNome;
     private javax.swing.JButton jButtonVoltarNome;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextFieldBuscar;
+    private javax.swing.JTextField jTextFieldBuscarDt;
     private javax.swing.JTable tabela_atividade;
     // End of variables declaration//GEN-END:variables
 
@@ -177,6 +211,29 @@ public class TelaListagem extends javax.swing.JFrame {
             DefaultTableModel model = (DefaultTableModel) tabela_atividade.getModel();
             model.setNumRows(0);
             ArrayList<CadastroLista> lista = (ArrayList<CadastroLista>) atividadeDAO.procurar(busca);
+
+            for (int num = 0; num < lista.size(); num++) {
+                model.addRow(new Object[]{
+                    lista.get(num).getIdAtv(),
+                    lista.get(num).getDataAtv(),
+                    lista.get(num).getMateriaAtv(),
+                    lista.get(num).getNomeAtv(),
+                    lista.get(num).isStatus() ? "Finalizado" : "Não Finalizado"
+                });
+            }
+            
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, "Listar Atividades" + erro);
+        }
+    }
+    private void listaratvDt() throws Exception {
+        try {
+            atividadeDAO objatv = new atividadeDAO();
+            busca = jTextFieldBuscarDt.getText();
+
+            DefaultTableModel model = (DefaultTableModel) tabela_atividade.getModel();
+            model.setNumRows(0);
+            ArrayList<CadastroLista> lista = (ArrayList<CadastroLista>) atividadeDAO.procurarDt(busca);
 
             for (int num = 0; num < lista.size(); num++) {
                 model.addRow(new Object[]{
