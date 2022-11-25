@@ -65,7 +65,7 @@ public class TelaListagem extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButtonDeletarNome);
-        jButtonDeletarNome.setBounds(480, 760, 100, 40);
+        jButtonDeletarNome.setBounds(600, 110, 100, 40);
 
         jButtonVoltarNome.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButtonVoltarNome.setText("VOLTAR");
@@ -214,7 +214,7 @@ public class TelaListagem extends javax.swing.JFrame {
 
             for (int num = 0; num < lista.size(); num++) {
                 model.addRow(new Object[]{
-                    lista.get(num).getIdAtv(),
+                    id=lista.get(num).getIdAtv(),
                     lista.get(num).getDataAtv(),
                     lista.get(num).getMateriaAtv(),
                     lista.get(num).getNomeAtv(),

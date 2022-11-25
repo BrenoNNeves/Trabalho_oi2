@@ -1,6 +1,7 @@
 package com.mycompany.View;
 
 
+
 import static com.mycompany.DAO.atividadeDAO.salvar;
 import Model.CadastroLista;
 import java.util.logging.Level;
