@@ -1,4 +1,4 @@
-package Model;
+package com.mycompany.Model;
 
 public class CadastroLista {
     

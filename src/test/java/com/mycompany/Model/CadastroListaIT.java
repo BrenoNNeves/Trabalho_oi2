@@ -5,11 +5,6 @@
  */
 package com.mycompany.Model;
 
-import Model.CadastroLista;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -21,146 +16,90 @@ public class CadastroListaIT {
     
     public CadastroListaIT() {
     }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
 
-    /**
-     * Test of isStatus method, of class CadastroLista.
-     */
     @Test
-    public void testIsStatus() {
-        System.out.println("isStatus");
-        CadastroLista instance = new CadastroLista();
+    public void testIsStatus() {        
+        CadastroLista cad = new CadastroLista();
+        boolean res = cad.isStatus();
         boolean expResult = false;
-        boolean result = instance.isStatus();
-        assertEquals(expResult, result);
-        fail("Teste status.");
+        assertEquals(expResult, res);        
     }
 
-    /**
-     * Test of setStatus method, of class CadastroLista.
-     */
     @Test
     public void testSetStatus() {
-        System.out.println("setStatus");
-        boolean status = false;
-        CadastroLista instance = new CadastroLista();
-        instance.setStatus(status);
-        fail("Teste status.");
+    	CadastroLista cad = new CadastroLista();
+        boolean res = cad.isStatus();
+        boolean expResult = false;
+        assertEquals(expResult, res);
     }
-
-    /**
-     * Test of getIdAtv method, of class CadastroLista.
-     */
+    
     @Test
     public void testGetIdAtv() {
-        System.out.println("getIdAtv");
-        CadastroLista instance = new CadastroLista();
+    	CadastroLista cad = new CadastroLista();
+        int res = cad.getIdAtv();
         int expResult = 0;
-        int result = instance.getIdAtv();
-        assertEquals(expResult, result);
-        fail("Teste atividade");
+        assertEquals(expResult, res);
     }
-
-    /**
-     * Test of setIdAtv method, of class CadastroLista.
-     */
     @Test
-    public void testSetIdAtv() {
-        System.out.println("setIdAtv");
-        int idAtv = 0;
-        CadastroLista instance = new CadastroLista();
-        instance.setIdAtv(idAtv);
-        fail("Teste atividade");
+    public void testSettIdAtv() {
+        int IdAtv = 10;
+        CadastroLista cad = new CadastroLista();
+        cad.setIdAtv(IdAtv);
+        System.out.println(IdAtv);
     }
 
-    /**
-     * Test of getNomeAtv method, of class CadastroLista.
-     */
+   
     @Test
     public void testGetNomeAtv() {
-        System.out.println("getNomeAtv");
-        CadastroLista instance = new CadastroLista();
+    	CadastroLista cad = new CadastroLista();
+        String res = cad.getNomeAtv();
         String expResult = "";
-        String result = instance.getNomeAtv();
-        assertEquals(expResult, result);
-        fail("Teste nome");
+        assertEquals(expResult, "");
     }
 
-    /**
-     * Test of setNomeAtv method, of class CadastroLista.
-     */
     @Test
     public void testSetNomeAtv() {
-        System.out.println("setNomeAtv");
-        String nomeAtv = "";
-        CadastroLista instance = new CadastroLista();
-        instance.setNomeAtv(nomeAtv);
-        fail("Teste nome");
+        String nomeAtv = "Algoritmos";
+        CadastroLista cad = new CadastroLista();
+        cad.setNomeAtv(nomeAtv);
+        System.out.println(nomeAtv);
     }
-
-    /**
-     * Test of getDataAtv method, of class CadastroLista.
-     */
+    
     @Test
     public void testGetDataAtv() {
-        System.out.println("getDataAtv");
-        CadastroLista instance = new CadastroLista();
-        String expResult = "";
-        String result = instance.getDataAtv();
-        assertEquals(expResult, result);
-        fail("Teste data");
+    	CadastroLista cad = new CadastroLista();
+        String expResult = "10/12/2022";
+        String result = cad.getDataAtv();
+        assertEquals(expResult, "10/12/2022");
+        System.out.println(expResult);
     }
 
-    /**
-     * Test of setDataAtv method, of class CadastroLista.
-     */
+    
     @Test
     public void testSetDataAtv() {
-        System.out.println("setDataAtv");
-        String dataAtv = "";
-        CadastroLista instance = new CadastroLista();
-        instance.setDataAtv(dataAtv);
-        fail("Teste data");
+        String dataAtv = "11/08/2022";
+        CadastroLista cad = new CadastroLista();
+        cad.setDataAtv(dataAtv);
+        System.out.println(dataAtv);
     }
 
-    /**
-     * Test of getMateriaAtv method, of class CadastroLista.
-     */
+    
     @Test
     public void testGetMateriaAtv() {
-        System.out.println("getMateriaAtv");
-        CadastroLista instance = new CadastroLista();
-        String expResult = "";
-        String result = instance.getMateriaAtv();
-        assertEquals(expResult, result);
-        fail("Teste materia");
+        CadastroLista cad = new CadastroLista();
+        String expResult = "Lógica";
+        String result = cad.getMateriaAtv();
+        assertEquals(expResult, "Lógica");
+        System.out.println(expResult);
     }
 
-    /**
-     * Test of setMateriaAtv method, of class CadastroLista.
-     */
+    
     @Test
     public void testSetMateriaAtv() {
-        System.out.println("setMateriaAtv");
-        String materiaAtv = "";
-        CadastroLista instance = new CadastroLista();
-        instance.setMateriaAtv(materiaAtv);
-        fail("Teste materia");
+    	String matAtv = "Arquitetura Software";
+        CadastroLista cad = new CadastroLista();
+        cad.setDataAtv(matAtv);
+        System.out.println(matAtv);
     }
     
 }

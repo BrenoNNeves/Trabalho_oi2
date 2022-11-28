@@ -5,23 +5,23 @@
  */
 package com.mycompany.DAO;
 
-import Model.CadastroLista;
+import static org.junit.Assert.fail;
+
 import java.util.List;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
  * @author Charlie
+ * @param <CadastroLista>
  */
-public class atividadeDAOIT {
-    
-    public atividadeDAOIT() {
-    }
+public class atividadeDAOIT<CadastroLista> {
+
     
     @BeforeClass
     public static void setUpClass() {
@@ -41,12 +41,13 @@ public class atividadeDAOIT {
 
     /**
      * Test of salvar method, of class atividadeDAO.
+     * @param System 
      */
     @Test
-    public void testSalvar() throws Exception {
-        System.out.println("salvar");
+    public void testSalvar(Object System) throws Exception {
+     
         CadastroLista cadastro = null;
-        atividadeDAO.salvar(cadastro);
+        
         fail("The test case is a prototype.");
     }
 
@@ -57,8 +58,8 @@ public class atividadeDAOIT {
     public void testListar() throws Exception {
         System.out.println("listar");
         List<CadastroLista> expResult = null;
-        List<CadastroLista> result = atividadeDAO.listar();
-        assertEquals(expResult, result);
+        
+       // assertEquals(expResult, result);
         fail("Teste listar");
     }
 
@@ -70,8 +71,8 @@ public class atividadeDAOIT {
         System.out.println("procurar");
         String nome = "";
         List<CadastroLista> expResult = null;
-        List<CadastroLista> result = atividadeDAO.procurar(nome);
-        assertEquals(expResult, result);
+        
+       //assertEquals(expResult, result);
         fail("Teste procurar.");
     }
 
@@ -83,8 +84,8 @@ public class atividadeDAOIT {
         System.out.println("obter");
         Integer id = null;
         CadastroLista expResult = null;
-        CadastroLista result = atividadeDAO.obter(id);
-        assertEquals(expResult, result);
+       
+       
         fail("Teste obter");
     }
 
@@ -95,7 +96,7 @@ public class atividadeDAOIT {
     public void testAtualizar() throws Exception {
         System.out.println("atualizar");
         CadastroLista cadastroAtualizado = null;
-        atividadeDAO.atualizar(cadastroAtualizado);
+       
         fail("Teste atualizar");
     }
 

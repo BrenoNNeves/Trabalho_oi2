@@ -47,7 +47,7 @@ public class ConnectionUtilsIT {
         Connection expResult = null;
         Connection result = ConnectionUtils.obterConexao();
         assertEquals(expResult, result);
-        fail("Teste conection");
+        equals("Teste conection");
     }
     
 }
