@@ -6,10 +6,6 @@
 package com.mycompany.DAO;
 
 import java.sql.Connection;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -19,35 +15,16 @@ import static org.junit.Assert.*;
  */
 public class ConnectionUtilsIT {
     
-    public ConnectionUtilsIT() {
-    }
     
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
+   
 
-    /**
-     * Test of obterConexao method, of class ConnectionUtils.
-     */
+    
     @Test
     public void testObterConexao() throws Exception {
-        System.out.println("obterConexao");
         Connection expResult = null;
-        Connection result = ConnectionUtils.obterConexao();
-        assertEquals(expResult, result);
-        equals("Teste conection");
+        Connection res = ConnectionUtils.obterConexao();        
+        assertEquals(expResult, res);
+        System.out.println(expResult);
     }
     
 }
