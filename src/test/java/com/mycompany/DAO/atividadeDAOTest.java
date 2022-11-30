@@ -27,7 +27,7 @@ public class atividadeDAOTest<CadastroLista> {
    
     @Test
     public void testProcurar() throws Exception {   
-         String nome = "luis";        
+         String nome = "Luis";        
          String expResult = nome;
          assertEquals(expResult, nome);        
     }
@@ -39,5 +39,18 @@ public class atividadeDAOTest<CadastroLista> {
         assertEquals(expResult, id);
     }
    
+    @Test
+    public void testObterID() throws Exception {
+        Integer id = 1;
+        CadastroLista expResult = (CadastroLista) id;    
+        assertEquals(expResult, id);
+    }
+    
+    @Test
+    public void testObterIDErrado() throws Exception {
+        Integer id = -2;
+        CadastroLista expResult = (CadastroLista) id;    
+        assertEquals(expResult, id);
+    }
     
 }
