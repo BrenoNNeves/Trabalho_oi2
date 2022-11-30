@@ -32,5 +32,13 @@ public class TelaCadastroTest {
 		String expResult = null;
 		assertEquals(expResult, disciplina);
 	}
-
+	
+	@Test
+	public void testInicialCadstroNulo() {
+		TelaCadastro lis = new TelaCadastro();
+		String disciplina = null;
+		lis.cad(disciplina);
+		String expResult = null;
+		assertEquals(expResult, null);
+	}
 }
