@@ -2,7 +2,9 @@ package com.mycompany.View;
 
 
 import static com.mycompany.DAO.atividadeDAO.salvar;
-import Model.CadastroLista;
+
+import com.mycompany.Model.CadastroLista;
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -185,4 +187,8 @@ public class TelaCadastro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
+	public void cad(Object object) {
+		// TODO Auto-generated method stub
+		
+	}
 }

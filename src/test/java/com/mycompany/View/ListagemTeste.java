@@ -8,8 +8,9 @@ import org.junit.jupiter.api.Test;
 class ListagemTeste {
 
 	@Test
-	void test() {
-		equals("Not yet implemented");
+	void testListagem() {
+		TelaListagem lis = new TelaListagem();
+		
 	}
 
 }
