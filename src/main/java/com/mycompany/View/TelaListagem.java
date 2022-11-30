@@ -248,4 +248,14 @@ public class TelaListagem extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Listar Atividades" + erro);
         }
     }
+
+	public void busca(Object object) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void id(int i) {
+		// TODO Auto-generated method stub
+		
+	}
 }
