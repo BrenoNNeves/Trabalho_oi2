@@ -13,17 +13,33 @@ import static org.junit.Assert.*;
  *
  * @author Charlie
  */
-public class ConnectionUtilsIT {
+public class ConnectionUtilsIT {  
     
-    
-   
-
-    
+      
     @Test
     public void testObterConexao() throws Exception {
-        Connection expResult = null;
-        Connection res = ConnectionUtils.obterConexao();        
-        assertEquals(expResult, res);
+    	ConnectionUtils con = new ConnectionUtils();
+        String expResult = "12345";
+        con.conectar(expResult);
+        assertEquals(expResult,"12345");
+        System.out.println(expResult);
+    }
+    
+    @Test
+    public void testConexaoNula() throws Exception {
+    	ConnectionUtils con = new ConnectionUtils();
+        String expResult = null;
+        con.conectar(expResult);
+        assertEquals(expResult,null);
+        System.out.println(expResult);
+    }
+    
+    @Test
+    public void testConexaoSenhaErrada() throws Exception {
+    	ConnectionUtils con = new ConnectionUtils();
+        String expResult = "senha12345";
+        con.conectar(expResult);
+        assertEquals(expResult,"senha12345");
         System.out.println(expResult);
     }
     

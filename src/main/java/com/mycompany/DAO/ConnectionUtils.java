@@ -21,5 +21,10 @@ public class ConnectionUtils {
             ("jdbc:mysql://localhost:8306/atividade?useTimezone=true&serverTimezone=UTC","root", "1234");
         return conn;
     }
+
+	public void conectar(String expResult) {
+		// TODO Auto-generated method stub
+		
+	}
     
 }
