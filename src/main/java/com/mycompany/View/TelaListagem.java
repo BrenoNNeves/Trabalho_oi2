@@ -1,7 +1,8 @@
 package com.mycompany.View;
 
-import Model.CadastroLista;
+//import Model.CadastroLista;
 import com.mycompany.DAO.atividadeDAO;
+import com.mycompany.Model.CadastroLista;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -27,6 +28,8 @@ public class TelaListagem extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButtonBuscar1 = new javax.swing.JButton();
+        jTextFieldBuscar1 = new javax.swing.JTextField();
         jButtonEditarNome = new javax.swing.JButton();
         jButtonDeletarNome = new javax.swing.JButton();
         jButtonVoltarNome = new javax.swing.JButton();
@@ -40,6 +43,18 @@ public class TelaListagem extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jTextFieldBuscarDt = new javax.swing.JTextField();
         jButtonBuscarData = new javax.swing.JButton();
+        jTextFieldDeletarMat = new javax.swing.JTextField();
+        jButtonDeletarMat = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
+
+        jButtonBuscar1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButtonBuscar1.setText("BUSCAR");
+        jButtonBuscar1.setToolTipText("");
+        jButtonBuscar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonBuscar1ActionPerformed(evt);
+            }
+        });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1000, 900));
@@ -54,7 +69,7 @@ public class TelaListagem extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButtonEditarNome);
-        jButtonEditarNome.setBounds(600, 760, 100, 40);
+        jButtonEditarNome.setBounds(550, 450, 100, 40);
 
         jButtonDeletarNome.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButtonDeletarNome.setText("DELETAR");
@@ -65,7 +80,7 @@ public class TelaListagem extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButtonDeletarNome);
-        jButtonDeletarNome.setBounds(480, 760, 100, 40);
+        jButtonDeletarNome.setBounds(430, 450, 100, 40);
 
         jButtonVoltarNome.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButtonVoltarNome.setText("VOLTAR");
@@ -76,7 +91,7 @@ public class TelaListagem extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButtonVoltarNome);
-        jButtonVoltarNome.setBounds(720, 760, 100, 40);
+        jButtonVoltarNome.setBounds(670, 450, 100, 40);
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel7.setText("CONTROLE DE ATIVIDADES");
@@ -84,16 +99,16 @@ public class TelaListagem extends javax.swing.JFrame {
         jLabel7.setBounds(390, 10, 250, 25);
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel8.setText("BUSCAR:");
+        jLabel8.setText("DELETAR MATERIA:");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(30, 20, 90, 25);
+        jLabel8.setBounds(30, 490, 260, 25);
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel9.setText("ATIVIDADES CADASTRADAS:");
         getContentPane().add(jLabel9);
         jLabel9.setBounds(30, 230, 250, 25);
         getContentPane().add(jTextFieldBuscar);
-        jTextFieldBuscar.setBounds(60, 60, 750, 30);
+        jTextFieldBuscar.setBounds(30, 60, 420, 30);
 
         jButtonBuscar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButtonBuscar.setText("BUSCAR");
@@ -104,7 +119,7 @@ public class TelaListagem extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButtonBuscar);
-        jButtonBuscar.setBounds(710, 110, 100, 40);
+        jButtonBuscar.setBounds(470, 60, 100, 40);
 
         tabela_atividade.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -120,14 +135,14 @@ public class TelaListagem extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tabela_atividade);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(70, 280, 750, 460);
+        jScrollPane1.setBounds(30, 270, 750, 160);
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel10.setText("BUSCAR POR DATA (EX:dd/mm/aaaa):");
         getContentPane().add(jLabel10);
         jLabel10.setBounds(30, 120, 360, 25);
         getContentPane().add(jTextFieldBuscarDt);
-        jTextFieldBuscarDt.setBounds(60, 160, 750, 30);
+        jTextFieldBuscarDt.setBounds(20, 160, 430, 30);
 
         jButtonBuscarData.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButtonBuscarData.setText("BUSCAR");
@@ -138,7 +153,31 @@ public class TelaListagem extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButtonBuscarData);
-        jButtonBuscarData.setBounds(710, 210, 100, 40);
+        jButtonBuscarData.setBounds(460, 150, 100, 40);
+
+        jTextFieldDeletarMat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldDeletarMatActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldDeletarMat);
+        jTextFieldDeletarMat.setBounds(30, 520, 420, 30);
+
+        jButtonDeletarMat.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButtonDeletarMat.setText("DELETAR MATERIA");
+        jButtonDeletarMat.setToolTipText("");
+        jButtonDeletarMat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDeletarMatActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonDeletarMat);
+        jButtonDeletarMat.setBounds(280, 560, 170, 40);
+
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel11.setText("BUSCAR:");
+        getContentPane().add(jLabel11);
+        jLabel11.setBounds(30, 20, 90, 25);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -177,6 +216,24 @@ public class TelaListagem extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButtonBuscarDataActionPerformed
 
+    private void jButtonBuscar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonBuscar1ActionPerformed
+
+    private void jButtonDeletarMatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDeletarMatActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonDeletarMatActionPerformed
+
+    private void jTextFieldDeletarMatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDeletarMatActionPerformed
+        String diciplina;
+        diciplina = jTextFieldDeletarMat.getText();
+        try {
+            atividadeDAO.excluirMateria(diciplina);
+        } catch (Exception ex) {
+            Logger.getLogger(TelaCadastro.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jTextFieldDeletarMatActionPerformed
+
     public static void main(String args[]) {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -189,17 +246,22 @@ public class TelaListagem extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonBuscar;
+    private javax.swing.JButton jButtonBuscar1;
     private javax.swing.JButton jButtonBuscarData;
+    private javax.swing.JButton jButtonDeletarMat;
     private javax.swing.JButton jButtonDeletarNome;
     private javax.swing.JButton jButtonEditarNome;
     private javax.swing.JButton jButtonVoltarNome;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextFieldBuscar;
+    private javax.swing.JTextField jTextFieldBuscar1;
     private javax.swing.JTextField jTextFieldBuscarDt;
+    private javax.swing.JTextField jTextFieldDeletarMat;
     private javax.swing.JTable tabela_atividade;
     // End of variables declaration//GEN-END:variables
 

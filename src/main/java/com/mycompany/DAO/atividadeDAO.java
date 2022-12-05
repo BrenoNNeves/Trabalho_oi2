@@ -282,7 +282,33 @@ public class atividadeDAO{
             }
         }
     }
+    public static void excluirMateria(String materia)
+        throws SQLException, Exception {
+        String sql = "DELETE FROM atividade.cad WHERE materia = ?";        
+             
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        
+        try {
+            connection = ConnectionUtils.obterConexao();
+            preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, materia);
+           
 
-    
+            //Executa o comando no banco de dados
+            preparedStatement.executeUpdate();
+        } finally {
+            //Se o statement ainda estiver aberto, realiza seu fechamento
+            if (preparedStatement != null && !preparedStatement.isClosed()) {
+                preparedStatement.close();
+            }
+            //Se a conexão ainda estiver aberta, realiza seu fechamento
+            if (connection != null && !connection.isClosed()) {
+                connection.close();
+            }
+        }
+
+
+    }
 }
 
