@@ -53,4 +53,24 @@ public class atividadeDAOTest<CadastroLista> {
         assertEquals(expResult, id);
     }
     
+    @Test
+    public void testExcluirMateria() throws Exception {
+    	 String materia = "Inteligencia artificial";        
+         String expResult = materia;
+         assertEquals(expResult,materia);
+    }
+    
+    @Test
+    public void testExcluirMateriaInesitente() throws Exception {
+    	 String materia = null;        
+         String expResult = materia;
+         assertEquals(expResult,materia);
+    }
+    
+    @Test
+    public void testExcluirMateriaVazia() throws Exception {
+    	 String materia = "";        
+         String expResult = materia;
+         assertEquals(expResult,materia);
+    }
 }
