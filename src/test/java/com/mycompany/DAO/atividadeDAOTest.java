@@ -26,7 +26,7 @@ public class atividadeDAOTest {
     @Test
     public void testSalvar() {
         CadastroLista cadastro = new CadastroLista();
-        cadastro.setNomeAtv("Nome da Atividade");
+        cadastro.setNomeAtv("WEB 1");
         cadastro.setDataAtv("2023-06-07");
         cadastro.setMateriaAtv("Matéria");
         cadastro.setStatus(true);
@@ -58,7 +58,7 @@ public class atividadeDAOTest {
 
     @Test
     public void testProcurar() {
-        String nome = "Nome da Atividade";
+        String nome = "Atividade 1";
 
         try {
             List<CadastroLista> listaCadastro = atividadeDAO.procurar(nome);
@@ -111,7 +111,7 @@ public class atividadeDAOTest {
     public void testAtualizar() {
         CadastroLista cadastroAtualizado = new CadastroLista();
         cadastroAtualizado.setIdAtv(1);
-        cadastroAtualizado.setNomeAtv("Nome Atualizado");
+        cadastroAtualizado.setNomeAtv("WEB2");
         cadastroAtualizado.setDataAtv("2023-06-08");
         cadastroAtualizado.setMateriaAtv("Matéria Atualizada");
         cadastroAtualizado.setStatus(false);
