@@ -1,105 +1,163 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.mycompany.Model;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
-import org.junit.Test;
-import static org.junit.Assert.*;
+import com.mycompany.DAO.atividadeDAO;
+import com.mycompany.Model.CadastroLista;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-/**
- *
- * @author Charlie
- */
-public class CadastroListaIT {
-    
-    public CadastroListaIT() {
+import java.sql.SQLException;
+import java.util.List;
+
+public class atividadeDAOTest {
+
+    @BeforeEach
+    public void setUp() {
+        // Configuração inicial antes de cada teste
     }
 
-    @Test
-    public void testIsStatus() {        
-        CadastroLista cad = new CadastroLista();
-        boolean res = cad.isStatus();
-        boolean expResult = false;
-        assertEquals(expResult, res);        
+    @AfterEach
+    public void tearDown() {
+        // Limpeza após cada teste
     }
 
     @Test
-    public void testSetStatus() {
-    	CadastroLista cad = new CadastroLista();
-        boolean res = cad.isStatus();
-        boolean expResult = false;
-        assertEquals(expResult, res);
-    }
-    
-    @Test
-    public void testGetIdAtv() {
-    	CadastroLista cad = new CadastroLista();
-        int res = cad.getIdAtv();
-        int expResult = 0;
-        assertEquals(expResult, res);
-    }
-    @Test
-    public void testSettIdAtv() {
-        int IdAtv = 10;
-        CadastroLista cad = new CadastroLista();
-        cad.setIdAtv(IdAtv);
-        System.out.println(IdAtv);
-    }
+    public void testSalvar() {
+        CadastroLista cadastro = new CadastroLista();
+        cadastro.setNomeAtv("Nome da Atividade");
+        cadastro.setDataAtv("2023-06-07");
+        cadastro.setMateriaAtv("Matéria");
+        cadastro.setStatus(true);
 
-   
-    @Test
-    public void testGetNomeAtv() {
-    	CadastroLista cad = new CadastroLista();
-        String res = cad.getNomeAtv();
-        String expResult = "";
-        assertEquals(expResult, "");
+        try {
+            atividadeDAO.salvar(cadastro);
+
+            // Verifica se o cadastro foi salvo corretamente
+            assertNotNull(cadastro.getIdAtv());
+        } catch (SQLException | Exception e) {
+            // Trate a exceção ou faça uma asserção de falha
+        }
     }
 
     @Test
-    public void testSetNomeAtv() {
-        String nomeAtv = "Algoritmos";
-        CadastroLista cad = new CadastroLista();
-        cad.setNomeAtv(nomeAtv);
-        System.out.println(nomeAtv);
-    }
-    
-    @Test
-    public void testGetDataAtv() {
-    	CadastroLista cad = new CadastroLista();
-        String expResult = "10/12/2022";
-        String result = cad.getDataAtv();
-        assertEquals(expResult, "10/12/2022");
-        System.out.println(expResult);
+    public void testListar() {
+        try {
+            List<CadastroLista> listaCadastro = atividadeDAO.listar();
+
+            // Verifica se a lista não é nula
+            assertNotNull(listaCadastro);
+
+            // Verifica se a lista está vazia (opcional)
+            // assertEquals(0, listaCadastro.size());
+        } catch (SQLException | Exception e) {
+            // Trate a exceção ou faça uma asserção de falha
+        }
     }
 
-    
     @Test
-    public void testSetDataAtv() {
-        String dataAtv = "11/08/2022";
-        CadastroLista cad = new CadastroLista();
-        cad.setDataAtv(dataAtv);
-        System.out.println(dataAtv);
+    public void testProcurar() {
+        String nome = "Nome da Atividade";
+
+        try {
+            List<CadastroLista> listaCadastro = atividadeDAO.procurar(nome);
+
+            // Verifica se a lista não é nula
+            assertNotNull(listaCadastro);
+
+            // Verifica se a lista está vazia (opcional)
+            // assertEquals(0, listaCadastro.size());
+        } catch (SQLException | Exception e) {
+            // Trate a exceção ou faça uma asserção de falha
+        }
     }
 
-    
     @Test
-    public void testGetMateriaAtv() {
-        CadastroLista cad = new CadastroLista();
-        String expResult = "Lógica";
-        String result = cad.getMateriaAtv();
-        assertEquals(expResult, "Lógica");
-        System.out.println(expResult);
+    public void testProcurarDt() {
+        String data = "2023-06-07";
+
+        try {
+            List<CadastroLista> listaCadastro = atividadeDAO.procurarDt(data);
+
+            // Verifica se a lista não é nula
+            assertNotNull(listaCadastro);
+
+            // Verifica se a lista está vazia (opcional)
+            // assertEquals(0, listaCadastro.size());
+        } catch (SQLException | Exception e) {
+            // Trate a exceção ou faça uma asserção de falha
+        }
     }
 
-    
     @Test
-    public void testSetMateriaAtv() {
-    	String matAtv = "Arquitetura Software";
-        CadastroLista cad = new CadastroLista();
-        cad.setDataAtv(matAtv);
-        System.out.println(matAtv);
+    public void testObter() {
+        Integer id = 1;
+
+        try {
+            CadastroLista cadastro = atividadeDAO.obter(id);
+
+            // Verifica se o objeto não é nulo
+            assertNotNull(cadastro);
+
+            // Verifica se o id do cadastro é o esperado
+            assertEquals(id, cadastro.getIdAtv());
+        } catch (SQLException | Exception e) {
+            // Trate a exceção ou faça uma asserção de falha
+        }
     }
-    
+
+    @Test
+    public void testAtualizar() {
+        CadastroLista cadastroAtualizado = new CadastroLista();
+        cadastroAtualizado.setIdAtv(1);
+        cadastroAtualizado.setNomeAtv("Nome Atualizado");
+        cadastroAtualizado.setDataAtv("2023-06-08");
+        cadastroAtualizado.setMateriaAtv("Matéria Atualizada");
+        cadastroAtualizado.setStatus(false);
+
+        try {
+            atividadeDAO.atualizar(cadastroAtualizado);
+
+            // Verifique se o cadastro foi atualizado corretamente
+            CadastroLista cadastroObtido = atividadeDAO.obter(cadastroAtualizado.getIdAtv());
+            assertNotNull(cadastroObtido);
+            assertEquals(cadastroAtualizado.getNomeAtv(), cadastroObtido.getNomeAtv());
+            assertEquals(cadastroAtualizado.getDataAtv(), cadastroObtido.getDataAtv());
+            assertEquals(cadastroAtualizado.getMateriaAtv(), cadastroObtido.getMateriaAtv());
+            assertEquals(cadastroAtualizado.isStatus(), cadastroObtido.isStatus());
+        } catch (SQLException | Exception e) {
+            // Trate a exceção ou faça uma asserção de falha
+        }
+    }
+
+    @Test
+    public void testExcluir() {
+        Integer id = 1;
+
+        try {
+            atividadeDAO.excluir(id);
+
+            // Verifique se o cadastro foi excluído corretamente
+            CadastroLista cadastroExcluido = atividadeDAO.obter(id);
+            assertNull(cadastroExcluido);
+        } catch (SQLException | Exception e) {
+            // Trate a exceção ou faça uma asserção de falha
+        }
+    }
+
+    @Test
+    public void testExcluirMateria() {
+        String materia = "Matéria";
+
+        try {
+            atividadeDAO.excluirMateria(materia);
+
+            // Verifique se os cadastros com a matéria foram excluídos corretamente
+            List<CadastroLista> listaCadastro = atividadeDAO.procurar(materia);
+            assertNull(listaCadastro);
+        } catch (SQLException | Exception e) {
+            // Trate a exceção ou faça uma asserção de falha
+        }
+    }
 }

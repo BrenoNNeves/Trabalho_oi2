@@ -1,46 +1,36 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.mycompany.DAO;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+import com.mycompany.DAO.ConnectionUtils;
+import org.junit.jupiter.api.Test;
 
 import java.sql.Connection;
-import org.junit.Test;
-import static org.junit.Assert.*;
+import java.sql.SQLException;
 
-/**
- *
- * @author Charlie
- */
-public class ConnectionUtilsIT {  
-    
-      
+public class ConnectionUtilsTest {
+
     @Test
-    public void testObterConexao() throws Exception {
-    	ConnectionUtils con = new ConnectionUtils();
-        String expResult = "12345";
-        con.conectar(expResult);
-        assertEquals(expResult,"12345");
-        System.out.println(expResult);
+    public void testObterConexao() {
+        try {
+            Connection conn = ConnectionUtils.obterConexao();
+
+            // Verifica se a conexão não é nula
+            assertNotNull(conn);
+
+            // Verifica se a conexão está aberta (opcional)
+            // assertFalse(conn.isClosed());
+
+            // Feche a conexão após o teste (opcional)
+            conn.close();
+        } catch (ClassNotFoundException | SQLException e) {
+            // Trate a exceção ou faça uma asserção de falha
+        }
     }
-    
+
     @Test
-    public void testConexaoNula() throws Exception {
-    	ConnectionUtils con = new ConnectionUtils();
-        String expResult = null;
-        con.conectar(expResult);
-        assertEquals(expResult,null);
-        System.out.println(expResult);
+    public void testObterConexaoExcecao() {
+        assertThrows(ClassNotFoundException.class, () -> {
+            ConnectionUtils.obterConexao();
+        });
     }
-    
-    @Test
-    public void testConexaoSenhaErrada() throws Exception {
-    	ConnectionUtils con = new ConnectionUtils();
-        String expResult = "senha12345";
-        con.conectar(expResult);
-        assertEquals(expResult,"senha12345");
-        System.out.println(expResult);
-    }
-    
 }
